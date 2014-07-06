@@ -1,6 +1,6 @@
 ##############################################################
 
-SodaqMoja.name=Sodaq Moja ATmega328P 8MHz at 57600 baud
+SodaqMoja.name=SODAQ Moja ATmega328P 8MHz at 57600 baud
 
 SodaqMoja.upload.protocol=arduino
 SodaqMoja.upload.maximum_size=32256
