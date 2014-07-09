@@ -17,6 +17,11 @@
 # etc...
 #
 # Edit History
+# 201406xx: WestfW: More Makefile restructuring.
+#                   Split off Makefile.1284, Makefile.extras, Makefile.custom
+#                   So that in theory, the main Makefile contains only the
+#                   official platforms, and does not need to be modified to
+#                   add "less supported" chips and boards.
 # 201303xx: WestfW: Major Makefile restructuring.
 #                   Allows options on Make command line "make xx LED=B3"
 #                   (see also pin_defs.h)
@@ -113,10 +118,15 @@ STK500-2 = $(STK500) -d$(MCU_TARGET) -ms -q -lCF -LCF -cUSB -I200kHz -s -wt
 
 
 OBJ        = $(PROGRAM).o
-OPTIMIZE = -Os -fno-inline-small-functions -fno-split-wide-types
+OPTIMIZE = -Os -fno-split-wide-types
 
 DEFS       =
-LIBS       =
+
+#
+# platforms support EEPROM and large bootloaders need the eeprom functions that
+# are defined in libc, even though we explicity remove it with -nostdlib because
+# of the space-savings.
+LIBS       =  -lc
 
 CC         = $(GCCROOT)avr-gcc
 
@@ -296,6 +306,7 @@ atmega8_isp: HFUSE ?= CC
 atmega8_isp: LFUSE ?= BF
 atmega8_isp: isp
 
+
 #---------------------------------------------------------------------------
 # "Board-level Platform" targets.
 # A "Board-level Platform" implies a manufactured platform with a particular
@@ -370,7 +381,6 @@ diecimila_isp: isp
 # Note that optiboot does not (can not) work on the MEGA2560
 #mega: TARGET = atmega1280
 mega1280: atmega1280
-
 
 mega1280_isp: mega1280
 mega1280_isp: TARGET = atmega1280
