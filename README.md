@@ -1,4 +1,4 @@
-# SODAQ Mbili: Platform files for Arduino to run on ATmega328P
+# SODAQ Moja: Platform files for Arduino to run on ATmega328P
 
 ## What is it?
 
@@ -7,9 +7,7 @@ is compatible with Arduino Uno.
 
 ## Current state
 
-Everything is there and has been initially tested.  It should work
-fine.  There is more detailed testing which must be completed before
-calling it completely 'done' though.  But that's how things work :-)
+Everything is there and has been tested.  It should work fine.
 
 The platform is based on the optiboot bootloader.  Notice that we are
 using our own version of optiboot. See https://github.com/SodaqMoja/optiboot.git
@@ -21,14 +19,15 @@ free for user code.
 1. Download the [ZIP File](https://downloads.sodaq.net/HardwareMoja.zip)
 2. Unzip it in a folder called 'hardware' off your sketches directory,
    e.g. /home/kees/sketchbook/hardware/
-   The ZIP file already unpacks in a subdirectory called 'sodaq-mbili'.
+   The ZIP file already unpacks in a subdirectory called 'sodaq-moja'.
 3. Restart the IDE !
 4. Select Tools > Board > SODAQ Moja
 5. To burn the bootloader, follow the Arduino [Bootloader](http://arduino.cc/en/Hacking/Bootloader) instructions.
 
 ## Requirements
 
-* Works only on Arduino >= 1.0.5
+* Works only on Arduino >= 1.5.x (tested with 1.5.8)
+* There is a GIT branch arduino-1.0.x with the files for Arduino 1.0.x
 
 ## Supported Boards
 
