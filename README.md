@@ -19,7 +19,8 @@ free for user code.
 1. Download the [ZIP File](https://downloads.sodaq.net/HardwareMoja.zip)
 2. Unzip it in a folder called 'hardware' off your sketches directory,
    e.g. /home/kees/sketchbook/hardware/
-   The ZIP file already unpacks in a subdirectory called 'sodaq-moja'.
+   The ZIP file unpacks in a subdirectory called 'HardwareMoja', so the
+   result must be in a directory like /home/kees/sketchbook/hardware/HardwareMoja
 3. Restart the IDE !
 4. Select Tools > Board > SODAQ Moja
 5. To burn the bootloader, follow the Arduino [Bootloader](http://arduino.cc/en/Hacking/Bootloader) instructions.
